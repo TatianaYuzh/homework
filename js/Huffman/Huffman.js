@@ -20,6 +20,8 @@ for (let i = 0; i < str.length; i++) {
 }
 console.log(alph); //frequency table
 
+if (str.length > 1){
+
 let tree = new Array();
 for (i in alph) {
     let n = new Node(i, alph[i], 0, null, '');
@@ -86,3 +88,8 @@ for (let i = 0; i < codeStr.length; i++) {
     }
 }
 console.log(decoder);
+}
+
+else {
+    console.log('a string of 1 letter');
+}
