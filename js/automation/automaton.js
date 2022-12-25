@@ -4,9 +4,6 @@ let s = fs.readFileSync(arg[2]);
 let t = fs.readFileSync(arg[3]);
 s = s.toString();
 t = t.toString();
-
-//s = 'ананас ананас';
-//t = 'ананас';
 m = t.length;
 console.time();
 alph = new Array();
