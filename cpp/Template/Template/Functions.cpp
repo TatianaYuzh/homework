@@ -64,7 +64,7 @@ void DataChange(Data* (&d), int n) {
 	
 	int _n;
 	cout << "Введите номер элемента (от 1 до " << n << "): ";
-	cin >> n;
+	cin >> _n;
 	_n--;
 
 	system("cls");
@@ -96,7 +96,7 @@ void DeleteData(Data* (&d), int& n) {
 	
 	int _n;
 	cout << "Введите номер элемента (от 1 до " << n << "): ";
-	cin >> n;
+	cin >> _n;
 	_n--;
 
 	system("cls");
