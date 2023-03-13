@@ -68,7 +68,7 @@ void main() {
 			system("cls");
 
 			if (amountOfData != 0) {
-				Print(d, amountOfData);
+				DataChange(d, amountOfData);
 			}
 			else
 				cout << "Данные пусты!" << endl;
