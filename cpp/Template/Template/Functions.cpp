@@ -17,9 +17,8 @@ void DataEntry(Data* (&d), int& n) {
 		cin >> d[i]._date.month;
 		cin >> d[i]._date.year;
 
-		cout << "Введите адрес: ";
-		cin >> d[i]._address.city;
-		cin >> d[i]._address.home;
+		cout << "Введите группу: ";
+		cin >> d[i]._group.number;
 
 		cout << "_________________________________" << endl;
 	}
@@ -32,6 +31,7 @@ void ReadingData(Data* (&d), int& n, string fileName) {
 		d = new Data[n];
 
 		for (int i = 0; i < n; i++) {
+			//id++
 			reading >> d[i]._initial.sutname;
 			reading >> d[i]._initial.patronymic;
 			reading >> d[i]._initial.name;
@@ -40,8 +40,7 @@ void ReadingData(Data* (&d), int& n, string fileName) {
 			reading >> d[i]._date.month;
 			reading >> d[i]._date.year;
 
-			reading >> d[i]._address.city;
-			reading >> d[i]._address.home;
+			reading >> d[i]._group.number;
 		}
 		cout << "Данные считаны!" << endl;
 	}
@@ -55,7 +54,7 @@ void Print(Data* d, int n) {
 
 		cout << "ФИО: " << d[i]._initial.sutname << " " << d[i]._initial.name << " " << d[i]._initial.patronymic << endl;
 		cout << "Дата: " << d[i]._date.day << " " << d[i]._date.month << " " <<d[i]._date.year << endl;
-		cout << "Адрес: " << d[i]._address.city <<" "<<d[i]._address.home << " " << endl;
+		cout << "Группа: " << d[i]._group.number << endl;
 
 		cout << "______________________________" << endl;
 	}
@@ -81,9 +80,8 @@ void DataChange(Data* (&d), int n) {
 		cin >> d[_n]._date.month;
 		cin >> d[_n]._date.year;
 
-		cout << "Введите адрес: ";
-		cin >> d[_n]._address.city;
-		cin >> d[_n]._address.home;
+		cout << "Введите группу: ";
+		cin >> d[_n]._group.number;
 
 		system("cls");
 
@@ -146,8 +144,7 @@ void Copy(Data& d_n, Data& d_o) {
 	d_n._date.month = d_o._date.month;
 	d_n._date.year = d_o._date.year;
 
-	d_n._address.city = d_o._address.city;
-	d_n._address.home = d_o._address.home;
+	d_n._group.number = d_o._group.number;
 
 }
 void AddDate(Data* (&d), int& n) {
@@ -171,8 +168,8 @@ void AddDate(Data* (&d), int& n) {
 	cout << "Введите дату: ";
 	cin >> d[n]._date.day >> d[n]._date.month >> d[n]._date.year;
 
-	cout << "Введите адрес: ";
-	cin >> d[n]._address.city >> d[n]._address.home;
+	cout << "Введите группа: ";
+	cin >> d[n]._group.number;
 
 	system("cls");
 
@@ -214,11 +211,8 @@ void SavingData(Data* d, int n, string fileName) {
 			record << d[i]._date.month << " ";
 			record << d[i]._date.year << endl;
 
-			record << d[i]._address.city << " ";
-			if (i < n - 1)
-				record << d[i]._address.home << endl;
-			else
-				record << d[i]._address.home;
+			record << d[i]._group.number << endl;
+
 		}
 	}
 	else

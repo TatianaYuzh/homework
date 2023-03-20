@@ -19,16 +19,16 @@ struct Date {
 		year;
 };
 
-struct Address {
-	string city;
-	int home;
+struct Group {
+	string number;
 };
 
 //структура данных
 struct Data {
+	//int id;
 	Initial _initial;
 	Date _date;
-	Address _address;
+	Group _group;
 };
 
 //прототипы функций
