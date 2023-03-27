@@ -7,6 +7,10 @@
 
 using namespace  std;
 
+struct Id {
+	int number;
+};
+
 struct Initial {
 	string sutname,
 		patronymic,
@@ -25,7 +29,7 @@ struct Group {
 
 //структура данных
 struct Data {
-	//int id;
+	Id _id;
 	Initial _initial;
 	Date _date;
 	Group _group;

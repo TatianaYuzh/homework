@@ -7,6 +7,9 @@ void DataEntry(Data* (&d), int& n) {
 	d = new Data[n];
 
 	for (int i = 0; i < n; i++) {
+		cout << "Введите id студента: ";
+		cin >> d[i]._id.number;
+
 		cout << "Введите ФИО: ";
 		cin >> d[i]._initial.sutname;
 		cin >> d[i]._initial.patronymic;
@@ -31,7 +34,8 @@ void ReadingData(Data* (&d), int& n, string fileName) {
 		d = new Data[n];
 
 		for (int i = 0; i < n; i++) {
-			//id++
+			reading >> d[i]._id.number;
+
 			reading >> d[i]._initial.sutname;
 			reading >> d[i]._initial.patronymic;
 			reading >> d[i]._initial.name;
@@ -52,6 +56,7 @@ void Print(Data* d, int n) {
 	for (int i = 0; i < n; i++) {
 		cout << "Данные №" << i + 1 << ":" << endl;
 
+		cout << "Id студента: " << d[i]._id.number << endl;
 		cout << "ФИО: " << d[i]._initial.sutname << " " << d[i]._initial.name << " " << d[i]._initial.patronymic << endl;
 		cout << "Дата: " << d[i]._date.day << " " << d[i]._date.month << " " <<d[i]._date.year << endl;
 		cout << "Группа: " << d[i]._group.number << endl;
@@ -136,6 +141,8 @@ void Copy(Data* (&d_n), Data* (&d_o), int n) {
 	}
 }
 void Copy(Data& d_n, Data& d_o) {
+	d_n._id.number = d_o._id.number;
+
 	d_n._initial.sutname = d_o._initial.sutname;
 	d_n._initial.patronymic = d_o._initial.patronymic;
 	d_n._initial.name = d_o._initial.name;
@@ -162,13 +169,16 @@ void AddDate(Data* (&d), int& n) {
 	//воззвращяем данные
 	Copy(d, buf, --n);
 
+	cout << "Введите id студента: ";
+	cin >> d[n]._id.number;
+
 	cout << "Введите ФИО: ";
 	cin >> d[n]._initial.sutname >> d[n]._initial.name >> d[n]._initial.patronymic;
 
 	cout << "Введите дату: ";
 	cin >> d[n]._date.day >> d[n]._date.month >> d[n]._date.year;
 
-	cout << "Введите группа: ";
+	cout << "Введите группу: ";
 	cin >> d[n]._group.number;
 
 	system("cls");
@@ -203,6 +213,8 @@ void SavingData(Data* d, int n, string fileName) {
 		record << n << endl;
 
 		for (int i = 0; i < n; i++) {
+			record << d[i]._id.number << endl;
+
 			record << d[i]._initial.sutname << endl;
 			record << d[i]._initial.name << endl;
 			record << d[i]._initial.patronymic << endl;
